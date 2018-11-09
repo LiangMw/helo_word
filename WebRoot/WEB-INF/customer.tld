@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3g.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+version="2.0">
+ <tlib-version>1.0</tlib-version>
+ <jsp-version>1.0</jsp-version>
+ <short-name>tagext</short-name>
+ <uri>http://www.holdsoft.com/tagext</uri>
+ <description>标签扩展</description>
+ 	<tag>
+ 		<description>APP模块名称获取</description>
+ 		<name>GetModuleNames</name>
+ 		<tag-class>com.backstage.tag.GetModuleNamesTag</tag-class>
+ 		<body-content>empty</body-content>
+ 		<attribute>
+ 			<name>moduleIDS</name>
+ 			<required>true</required>
+ 			<rtexprvalue>true</rtexprvalue>
+ 		</attribute> 		
+ 	</tag>
+ </taglib>
