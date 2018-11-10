@@ -1,4 +1,11 @@
+//正式
 jdbcUrl = jdbc:mysql://127.0.0.1/jfinal_demo?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
 user = jfinal
 password =Wei_13579
+//测试
+jdbcUrldebug = jdbc:mysql://127.0.0.1/jfinal_demo?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+userdebug = root
+passworddebug =123456
+
+
 devMode = true
