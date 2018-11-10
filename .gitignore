@@ -1,2 +1,5 @@
 /jfinal_demo.log
-/res/
+/.idea
+/.settings
+/.classpath
+/.project
