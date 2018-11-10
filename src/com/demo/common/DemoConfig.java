@@ -84,7 +84,11 @@ public class DemoConfig extends JFinalConfig {
 	}
 	
 	public static DruidPlugin createDruidPlugin() {
-		return new DruidPlugin(PropKit.get("jdbcUrl"), PropKit.get("user"), PropKit.get("password").trim());
+		if(PropKit.getBoolean("devMode", false)){//开发模式，链接本地测试库
+			return new DruidPlugin(PropKit.get("jdbcUrldebug"), PropKit.get("userdebug"), PropKit.get("passworddebug").trim());
+		}else{
+			return new DruidPlugin(PropKit.get("jdbcUrl"), PropKit.get("user"), PropKit.get("password").trim());
+		}
 	}
 	
 	/**
