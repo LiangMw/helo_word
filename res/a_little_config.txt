@@ -1,4 +1,4 @@
-jdbcUrl = jdbc:mysql://118.24.213.53/jfinal_demo?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+jdbcUrl = jdbc:mysql://127.0.0.1/jfinal_demo?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
 user = mingwei
 password =Wei_9212084545
 devMode = true
