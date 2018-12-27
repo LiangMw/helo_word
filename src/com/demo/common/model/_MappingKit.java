@@ -18,6 +18,7 @@ public class _MappingKit {
 	public static void mapping(ActiveRecordPlugin arp) {
 		arp.addMapping("f_files", "id", FFiles.class);
 		arp.addMapping("m_banner", "id", MBanner.class);
+		arp.addMapping("s_token", "id", SToken.class);
 		arp.addMapping("s_user", "id", SUser.class);
 		arp.addMapping("t_function", "id", Function.class);
 		arp.addMapping("t_role", "id", Role.class);

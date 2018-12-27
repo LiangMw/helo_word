@@ -90,4 +90,22 @@ public abstract class BaseSUser<M extends BaseSUser<M>> extends Model<M> impleme
 		return get("updatetime");
 	}
 
+	public M setMemo(java.lang.String memo) {
+		set("memo", memo);
+		return (M)this;
+	}
+
+	public java.lang.String getMemo() {
+		return get("memo");
+	}
+
+	public M setFacepic(java.lang.String facepic) {
+		set("facepic", facepic);
+		return (M)this;
+	}
+
+	public java.lang.String getFacepic() {
+		return get("facepic");
+	}
+
 }
