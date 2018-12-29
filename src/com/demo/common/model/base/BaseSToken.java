@@ -54,4 +54,13 @@ public abstract class BaseSToken<M extends BaseSToken<M>> extends Model<M> imple
 		return get("updatetime");
 	}
 
+	public M setState(java.lang.Integer state) {
+		set("state", state);
+		return (M)this;
+	}
+
+	public java.lang.Integer getState() {
+		return get("state");
+	}
+
 }

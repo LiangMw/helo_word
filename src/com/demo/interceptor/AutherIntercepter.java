@@ -6,20 +6,17 @@ import com.demo.util.SysStatus;
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
 import com.jfinal.kit.HashKit;
+import com.jfinal.kit.LogKit;
 import com.jfinal.kit.StrKit;
 
 public class AutherIntercepter implements Interceptor{
 	
-	public static String token = "";
-
 	@Override
 	public void intercept(Invocation inv) {
 		// TODO Auto-generated method stub
 		String guid = inv.getController().getPara("guid");
 		String sign = inv.getController().getPara("sign");
-		if(StrKit.isBlank(token)){
-			token = getToken(guid);
-		}
+		String token = getToken(guid);
 		System.out.println( token);
 		System.out.println( inv.getControllerKey() + "/" + inv.getMethodName() + " ,  " + inv);
 		System.out.println( inv.getActionKey());
@@ -52,7 +49,6 @@ public class AutherIntercepter implements Interceptor{
 			String newsign;
 			newsign = cKey + "?token=" + token;
 			System.out.println("----"+HashKit.md5(newsign));
-
 			if (sign.equals(HashKit.md5(newsign))) {
 				return true;
 			}
@@ -73,5 +69,4 @@ public class AutherIntercepter implements Interceptor{
 			return SysStatus.CODETOKENERROR;
 		}
 	} 
-
 }

@@ -53,6 +53,21 @@ public class LoginController extends ControllerExt {
 			}
 		}
 	}
+	
+	@Clear
+	public void logout() {
+		String guid = getPara("guid");
+		if (StrKit.isBlank(guid)) {
+			renderAppError("参数错误");
+		} else {
+			Boolean token = ls.logout(guid);
+			if (token) {
+				renderAppSuccess("退出成功");
+			} else {
+				renderAppError("退出出错");
+			}
+		}
+	}
 
 	@Clear
 	@Before(AutherIntercepter.class)

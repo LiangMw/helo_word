@@ -5,6 +5,8 @@ import java.util.UUID;
 import com.demo.common.model.SToken;
 import com.demo.common.model.SUser;
 import com.jfinal.kit.HashKit;
+import com.jfinal.kit.StrKit;
+import com.jfinal.template.ext.directive.Str;
 
 
 public class LoginService {
@@ -37,15 +39,37 @@ public class LoginService {
 			if(token!=null){
 				token.setGuid(u.getGuid());
 				token.setToken(HashKit.generateSalt(10));
+				token.setState(1);
 				token.update();
 			}else{
 				token = new SToken();
 				token.setGuid(u.getGuid());
+				token.setState(1);
 				token.setToken(HashKit.generateSalt(10)).save();
 			}
 			return token;
 		}else{
 			return null;
+		}
+	}
+	
+	/**
+	 * 退出登录
+	 * @param guid
+	 * @return
+	 */
+	public static Boolean logout(String guid){
+		
+		if(!StrKit.isBlank(guid)){
+			SToken token =  SToken.dao.findFirst("select * from s_token where guid=?",guid);
+			if(token!=null){
+				token.setState(0);
+				return token.update();
+			}else{
+				return false;
+			}
+		}else{
+			return false;
 		}
 	}
 	
