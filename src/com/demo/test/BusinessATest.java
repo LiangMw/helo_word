@@ -21,7 +21,7 @@ public class BusinessATest {
 		
 		
 //		assertTrue(a+b==2);
-		System.out.println(checkToken("6436a6764304f71cd8446f8e0e45d857","/login/userinfo","R-p-fN1vvR"));
+//		System.out.println(checkToken("6436a6764304f71cd8446f8e0e45d857","/login/userinfo","R-p-fN1vvR"));
 		
 	}
 	

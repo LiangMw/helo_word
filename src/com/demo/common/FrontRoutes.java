@@ -1,5 +1,6 @@
 package com.demo.common;
 
+import com.demo.controller.functions.FunctionController;
 import com.demo.controller.login.LoginController;
 
 import com.demo.controller.music.MusicController;
@@ -14,6 +15,7 @@ public class FrontRoutes extends Routes {
 		
 		add("/login",LoginController.class);
 		add("/music",MusicController.class);
+		add("/fc",FunctionController.class);
 		add("/test",TestController.class);
 		
 	}
